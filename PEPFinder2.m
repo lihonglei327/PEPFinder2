@@ -4,7 +4,9 @@ global zero eps omega;
 zero = 1e-20;          
 omega = 5;           
 eps = 5e-2;           
-top_k = 30;            
+top_k = 30;   
+
+data_file="data/data4.csv";
 
 function [is_intersect, pt] = segments_intersect(A, B, C, D)
     global zero;
@@ -168,7 +170,7 @@ function display_curve(curve, intersections, top_k)
     end
 end
 
-curve=readmatrix("data/data4.csv");
+curve=readmatrix(data_file);
 if (size(curve,2)<3)
     curve(:,3)=0;
 end
